@@ -1,0 +1,54 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{{url_for('static',filename='script.js')}}"></script>
+</head>
+<body>
+    <div>
+        <div class="leaflet-map-div" id="map">
+            <button class="reportButton">Report a Problem</button>
+        </div>
+        <div class="nearby" id="nearby">
+            <h1>Nearby You</h1>
+            <div class="nearby-stops" id="nearby-stops">
+                <h2 class="nomargin">Stops</h2>
+                <div class="nearby-stop-obj">
+                    <h3>3rd Ave & Marion St</h3>
+                    <p>S Renton P&R (101) -- 2 min</p>
+                </div>
+                <div class="nearby-stop-obj">
+                    <h3>4th Ave & Columbia St</h3>
+                    <p>Carkeek Park (34) -- 16 min</p>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Report a problem</p>
+          <select name="type" id="problem-type">
+            <option value="stop-nevercame">Stop - Bus Never Came</option>
+            <option value="stop-early">Stop - Bus Arrived Early</option>
+            <option value="stop-late">Stop - Bus Arrived Late</option>
+            <option value="stop-nostop">Stop - Bus Didn't Stop</option>
+            <option value="stop-bodily">Stop - Bodily Fluids</option>
+            <option value="stop-noaccess">Stop - Inaccessable</option>
+            <option value="stop-unsafe">Stop - Unsafe Condition</option>
+            <option value="stop-fr">Stop - First Responder Activity</option>
+
+            <option value="bus-headsign">Bus - Incorrect Headsign</option>
+            <option value="bus-bodily">Bus - Bodily Fluids</option>
+            <option value="bus-unsafe">Bus - Unsafe Condition</option>
+            <option value="bus-delay">Bus - Significant Delay</option>
+          </select>
+          <p id="detectLocation">We detect that you are at: </p>
+          <button id="submit">Submit</button>
+        </div>
+      
+      </div>
+</body>
